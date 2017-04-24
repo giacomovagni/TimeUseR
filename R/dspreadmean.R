@@ -26,3 +26,17 @@ dspreadmean30 = function(data, ...) {
 
 dplyrmean = function(dta, int = 10, idno, day, giac5) dta[,.N * int,list(idno, day, giac5)] %>% dcast.data.table(idno + day ~ giac5, value.var = 'V1', fill = 0)
 
+dspreadmean10couple = function(data, ...) {
+  message('must set varMEN, varWOM and value // set w = 1')
+  data %>% group_by_(.dots = lazyeval::lazy_dots(...)) %>%
+    summarise(n = n()*10) %>% group_by() %>%
+    mutate(varWOM = paste('wom', varWOM, sep = '-'), varMEN = paste('men', varMEN, sep = '-')) %>%
+    setDT() %>%
+    dcast.data.table(hldid + day + w ~ varMEN + varWOM, value.var = 'n', fill = 0)
+}
+
+
+
+
+
+
