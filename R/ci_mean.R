@@ -15,7 +15,7 @@ ci_mean = function(x, normal = F){
 
   message('Must be a dataframe with at least two variables')
 
-  mu = x %>% mutate(n = n()) %>% group_by(n) %>% summarise_each(funs(mean)) %>% melt(id.vars = 'n', value.name = 'mean')
+  mu = x %>% mutate(n = n()) %>% group_by(n) %>% summarise_each(funs(mean(., na.rm = T))) %>% melt(id.vars = 'n', value.name = 'mean')
 
   if(normal == T){
     err = x %>% group_by() %>% summarise_each(funs(sterrNormal)) %>% melt(value.name = 'error')
