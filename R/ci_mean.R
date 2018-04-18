@@ -1,8 +1,9 @@
 
-require(dplyr)
-require(reshape2)
+library(tidyverse)
+library(reshape2)
 
-x = mtcars [,c('mpg')]
+#x = mtcars [,c('mpg', 'disp')]
+#ci_mean(mtcars)
 
 # Standard Error functions #
 # normal distribution
