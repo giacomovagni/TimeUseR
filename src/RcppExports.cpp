@@ -5,13 +5,83 @@
 
 using namespace Rcpp;
 
+// TimeHoursCalCpp1
+NumericVector TimeHoursCalCpp1(IntegerVector x);
+RcppExport SEXP _TimeUseR_TimeHoursCalCpp1(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< IntegerVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(TimeHoursCalCpp1(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// TimeHoursCalCpp2
+NumericVector TimeHoursCalCpp2(IntegerVector x);
+RcppExport SEXP _TimeUseR_TimeHoursCalCpp2(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< IntegerVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(TimeHoursCalCpp2(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// TimeHoursCalCpp3
+NumericVector TimeHoursCalCpp3(IntegerVector x);
+RcppExport SEXP _TimeUseR_TimeHoursCalCpp3(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< IntegerVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(TimeHoursCalCpp3(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// TimeHoursCalCpp4
+NumericVector TimeHoursCalCpp4(IntegerVector x);
+RcppExport SEXP _TimeUseR_TimeHoursCalCpp4(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< IntegerVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(TimeHoursCalCpp4(x));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rcpp_hello
 List rcpp_hello();
-RcppExport SEXP TimeUseR_rcpp_hello() {
+RcppExport SEXP _TimeUseR_rcpp_hello() {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     rcpp_result_gen = Rcpp::wrap(rcpp_hello());
     return rcpp_result_gen;
 END_RCPP
+}
+// Signif
+CharacterVector Signif(NumericVector x);
+RcppExport SEXP _TimeUseR_Signif(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(Signif(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+
+static const R_CallMethodDef CallEntries[] = {
+    {"_TimeUseR_TimeHoursCalCpp1", (DL_FUNC) &_TimeUseR_TimeHoursCalCpp1, 1},
+    {"_TimeUseR_TimeHoursCalCpp2", (DL_FUNC) &_TimeUseR_TimeHoursCalCpp2, 1},
+    {"_TimeUseR_TimeHoursCalCpp3", (DL_FUNC) &_TimeUseR_TimeHoursCalCpp3, 1},
+    {"_TimeUseR_TimeHoursCalCpp4", (DL_FUNC) &_TimeUseR_TimeHoursCalCpp4, 1},
+    {"_TimeUseR_rcpp_hello", (DL_FUNC) &_TimeUseR_rcpp_hello, 0},
+    {"_TimeUseR_Signif", (DL_FUNC) &_TimeUseR_Signif, 1},
+    {NULL, NULL, 0}
+};
+
+RcppExport void R_init_TimeUseR(DllInfo *dll) {
+    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
+    R_useDynamicSymbols(dll, FALSE);
 }

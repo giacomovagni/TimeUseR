@@ -1,6 +1,6 @@
 # TimeUseR
 
-Not ready yet!
+In developpment! 
 
 ```
 library("devtools")
